@@ -46,7 +46,7 @@ jobs:
         run: bun build src/index.ts --outdir=dist
 
       - name: Publish to npm
-        run: npm publish
+        uses: JS-DevTools/npm-publish@v3
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
