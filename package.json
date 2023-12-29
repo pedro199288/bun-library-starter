@@ -1,5 +1,7 @@
 {
   "name": "bun-library-starter",
+  "description": "A starter project for creating library with bun",
+  "author": "Pedro Monteagudo (https://github.com/pedro199288)",
   "version": "0.0.1",
   "main": "dist/index.js",
   "files": [
@@ -7,6 +9,7 @@
   ],
   "scripts": {
     "start": "bun src/index.ts",
+    "dev": "bun --watch src/index.ts",
     "build": "bun build src/index.ts --outdir=dist",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "format": "prettier --write 'src/**/*.{ts,tsx,json}'",
