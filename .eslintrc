@@ -1,0 +1,37 @@
+{
+  "env": {},
+  "extends": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 13
+  },
+  "plugins": [
+    "@typescript-eslint",
+  ],
+  "rules": {
+    "no-underscore-dangle": "off",
+    "no-use-before-define": 2,
+    "no-case-declarations": "off",
+    "class-methods-use-this": "off",
+    "semi": "off",
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "no-unused-expressions": "off",
+    "no-restricted-globals": "off",
+    "no-multi-assign": "error",
+    "strict": [
+      "error",
+      "global"
+    ],
+    "security/detect-object-injection": "off"
+  }
+}
