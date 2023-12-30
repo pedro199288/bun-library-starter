@@ -29,6 +29,10 @@ jobs:
   CD: 
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
+    permissions:
+      # contents: write
+      # pull-requests: write
+      repository-projects: write
     needs: CI
     steps:
 
@@ -45,11 +49,6 @@ jobs:
       - name: Build project
         run: bun build src/index.ts --outdir=dist
 
-      - name: Publish to npm
-        uses: JS-DevTools/npm-publish@v3
-        with:
-          token: ${{secrets.NPM_TOKEN}}
-
       - name: Create GitHub Release
         uses: actions/create-release@v1
         env:
@@ -59,5 +58,11 @@ jobs:
           release_name: Release ${{ github.ref }}
           draft: false
           prerelease: false
+          
+      - name: Publish to npm
+        uses: JS-DevTools/npm-publish@v3
+        with:
+          token: ${{secrets.NPM_TOKEN}}
+
 
     
