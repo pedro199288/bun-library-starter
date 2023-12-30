@@ -10,16 +10,17 @@
   "scripts": {
     "start": "bun src/index.ts",
     "dev": "bun --watch src/index.ts",
-    "build": "bun build src/index.ts --outdir=dist",
+    "build": "bun build src/index.ts --outdir=dist && bun run build:declaration",
+    "build:declaration": "tsc --emitDeclarationOnly --project tsconfig.types.json",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "format": "prettier --write 'src/**/*.{ts,tsx,json}'",
     "typecheck": "tsc --noEmit",
     "test": "bun test"
   },
   "devDependencies": {
+    "@types/bun": "^1.0.0",
     "@typescript-eslint/eslint-plugin": "^6.16.0",
     "@typescript-eslint/parser": "^6.16.0",
-    "bun-types": "^1.0.20",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.2",

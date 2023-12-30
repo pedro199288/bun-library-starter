@@ -3,6 +3,11 @@ import { execSync } from 'child_process';
 const args = process.argv.slice(2);
 const versionType = args[0];
 
+if (!versionType) {
+  console.error('No version type provided, use any of "patch", "minor" or "major"');
+  process.exit(1);
+}
+
 function isValidVersionType(versionType: string): versionType is 'patch' | 'minor' | 'major' {
   return ['patch', 'minor', 'major'].some(v => v === versionType)
 }
