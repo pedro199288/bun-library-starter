@@ -27,7 +27,7 @@ jobs:
         run: bun run test
 
   CD: 
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: github.ref == 'v*' && github.event_name == 'push'
     runs-on: ubuntu-latest
     permissions: write-all
     needs: CI
