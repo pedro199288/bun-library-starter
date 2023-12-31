@@ -10,12 +10,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Set env
-        run: echo "GITHUB_TAG_NAME=$(echo ${{github.ref}} | sed -e 's/refs\/tags\///g')" >> $GITHUB_ENV
-
-      - name: Test
-        run: echo $GITHUB_TAG_NAME
-
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
         with:
@@ -52,7 +46,10 @@ jobs:
       - name: Build project
         run: bun build src/index.ts --outdir=dist
 
-      - name: Test echo GITHUB_TAG_NAME
+      - name: Set env
+        run: echo "GITHUB_TAG_NAME=$(echo ${{github.ref}} | sed -e 's/refs\/tags\///g')" >> $GITHUB_ENV
+
+      - name: Test
         run: echo $GITHUB_TAG_NAME
         
       - name: Create GitHub Release
