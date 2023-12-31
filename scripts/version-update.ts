@@ -19,7 +19,7 @@ if (!isValidVersionType(versionType)) {
 
 function updateVersion(versionType: 'patch' | 'minor' | 'major'): void {
   try {
-    const result = execSync(`npm version ${versionType}`, { stdio: 'inherit' });
+    const result = execSync(`npm version ${versionType}`);
     console.log('result', result.toString())
     console.log(`Version updated to ${versionType}`);
   } catch (error) {
