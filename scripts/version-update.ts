@@ -17,15 +17,26 @@ if (!isValidVersionType(versionType)) {
   process.exit(1);
 }
 
-function updateVersion(versionType: 'patch' | 'minor' | 'major'): void {
+function createNewVersion(versionType: 'patch' | 'minor' | 'major') {
   try {
-    const result = execSync(`npm version ${versionType}`);
-    console.log('result', result.toString())
-    console.log(`Version updated to ${versionType}`);
+    const newVersion = execSync(`npm version ${versionType}`);
+    console.log(`Version updated as ${versionType} version to: ${newVersion}`);
+    return newVersion.toString().trim();
   } catch (error) {
     console.error('Failed to update version:', error);
     process.exit(1);
   }
 }
 
-updateVersion(versionType);
+function pushTagForVersion(version: string): void {
+  try {
+    execSync(`git push origin ${version}`);
+    console.log(`Pushed tag ${version} to origin`);
+  } catch (error) {
+    console.error('Failed to push tag:', error);
+    process.exit(1);
+  }
+}
+
+const newVersion = createNewVersion(versionType);
+pushTagForVersion(newVersion);
