@@ -2,7 +2,7 @@
   "name": "bun-library-starter",
   "description": "A starter project for creating library with bun",
   "author": "Pedro Monteagudo (https://github.com/pedro199288)",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "main": "dist/index.js",
   "files": [
     "dist"
