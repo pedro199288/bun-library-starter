@@ -52,19 +52,13 @@ jobs:
       - name: Build project
         run: bun build src/index.ts --outdir=dist
 
-      - name: Test
+      - name: Test echo GITHUB_TAG_NAME
         run: echo $GITHUB_TAG_NAME
         
       - name: Create GitHub Release
-        uses: actions/create-release@v1
+        run: gh release create $GITHUB_TAG_NAME --title $GITHUB_TAG_NAME --notes "Release $GITHUB_TAG_NAME" --target $GITHUB_SHA --draft=false --prerelease=false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TAG: 
-        with:
-          tag_name: $GITHUB_TAG_NAME
-          release_name: $GITHUB_TAG_NAME
-          draft: false
-          prerelease: false
 
       - name: Publish to npm
         uses: JS-DevTools/npm-publish@v3
