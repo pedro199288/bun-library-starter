@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "lib": [
-      "ESNext"
+      "ESNext",
+      "dom",
+      "dom.iterable"
     ],
     "target": "ESNext",
     "module": "ESNext",
@@ -20,7 +22,8 @@
     "noPropertyAccessFromIndexSignature": true,
     "noUncheckedIndexedAccess": true,
     "types": [
-      "bun-types"
+      "@types/bun",
+      "./types.d.ts"
     ]
   }
 }
