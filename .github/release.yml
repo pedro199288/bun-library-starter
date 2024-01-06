@@ -2,8 +2,6 @@ changelog:
   exclude:
     labels:
       - ignore-for-release
-    authors:
-      - octocat
   categories:
     - title: Breaking Changes 🛠
       labels:
@@ -12,7 +10,11 @@ changelog:
     - title: Exciting New Features 🎉
       labels:
         - Semver-Minor
-        - enhancement
+        - feat
+        - docs
+        - refactor
+        - test
+        - perf
     - title: Other Changes
       labels:
-        - "*"
+        - fix
