@@ -40,4 +40,4 @@ function pushTagForVersion(version: string): void {
 
 const newVersion = createNewVersion(versionType);
 pushTagForVersion(newVersion);
-console.log('Done! 🎉')
+console.log('Release done! 🚀')
