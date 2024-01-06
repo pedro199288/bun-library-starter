@@ -13,7 +13,7 @@ bun-library-starter is a starter template for creating javascript libraries with
 ## Usage
 
 ### Install
-- Install Bunhttps://bun.sh/docs/installation
+- Install [Bun](https://bun.sh/docs/installation)
 - Clone this repository and install dependencies
 ```bash
 $ git clone git@github.com:pedro199288/bun-library-starter.git
@@ -40,7 +40,7 @@ $ bun run build
 ```
 
 ### Create a release
-To create a release, run the following npm command:
+To create github and npm releases, add the `NPM_TOKEN`` secret to your repository secrets and run the following npm command:
 ```bash
 $ bun release <release-type>
 ```
