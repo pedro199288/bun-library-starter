@@ -30,7 +30,7 @@ function createNewVersion(versionType: 'patch' | 'minor' | 'major') {
 
 function pushTagForVersion(version: string): void {
   try {
-    execSync(`git push origin ${version}`);
+    execSync(`git push --atomic origin main ${version}`);
     console.log(`Pushed tag ${version} to origin`);
   } catch (error) {
     console.error('Failed to push tag:', error);
