@@ -8,11 +8,7 @@ changelog:
         - breaking-change
     - title: Exciting New Features 🎉
       labels:
-        - feat
-        - docs
-        - refactor
-        - test
-        - perf
+        - feature
     - title: Bug Fixes 🐛
       labels:
         - fix
