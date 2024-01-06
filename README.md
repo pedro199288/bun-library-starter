@@ -47,3 +47,8 @@ $ bun ./scripts/version-update.ts <release-type>
 Where `<release-type>` can be `major`, `minor` or `patch`.
 
 This will update the version in `package.json`, create a git tag and commit the changes.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LICENSE) file for details.
+
