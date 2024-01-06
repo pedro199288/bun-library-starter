@@ -53,7 +53,7 @@ jobs:
         run: echo $GITHUB_TAG_NAME
         
       - name: Create GitHub Release
-        run: gh release create $GITHUB_TAG_NAME
+        run: gh release create $GITHUB_TAG_NAME --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
