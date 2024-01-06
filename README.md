@@ -24,7 +24,7 @@ $ bun install
 ### Set library details
 To set the library name, description, author, repository and license, run the following command:
 ``` 
-$ bun scripts/set-library-details.ts
+$ bun run scripts/set-library-details.ts
 ```
 
 ### Development
@@ -40,9 +40,9 @@ $ bun run build
 ```
 
 ### Create a release
-To create a release, run the following command:
+To create a release, run the following npm command:
 ```bash
-$ bun ./scripts/version-update.ts <release-type>
+$ bun release <release-type>
 ```
 Where `<release-type>` can be `major`, `minor` or `patch`.
 
@@ -51,4 +51,3 @@ This will update the version in `package.json`, create a git tag and commit the 
 ## License
 
 This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LICENSE) file for details.
-
