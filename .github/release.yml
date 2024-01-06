@@ -15,6 +15,6 @@ changelog:
         - refactor
         - test
         - perf
-    - title: Other Changes
+    - title: Bug Fixes 🐛
       labels:
         - fix
