@@ -1,13 +1,14 @@
 {
   "name": "bun-library-starter",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A starter project for creating library with bun",
   "author": "Pedro Monteagudo (https://github.com/pedro199288)",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "start": "bun src/index.ts",
     "dev": "bun --watch src/index.ts",
-    "build": "bun build src/revelio/index.ts --outdir=dist && bun run build:declaration",
+    "build": "bun build src/index.ts --outdir=dist && bun run build:declaration",
     "build:declaration": "tsc --emitDeclarationOnly --project tsconfig.types.json",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "format": "prettier --write 'src/**/*.{ts,tsx,json}'",
